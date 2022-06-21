@@ -1,0 +1,13 @@
+[package]
+name = "dogchicken"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+macroquad = "0.3"
+log = "0.4"
+console_log = {version = "0.2", optional = true, features = ["color"] }
+itertools = "0.10.3"
+
+[features]
+default = ["console_log"]
