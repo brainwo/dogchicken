@@ -5,9 +5,10 @@ rustup target add wasm32-unknown-unknown
 cargo build --target wasm32-unknown-unknown
 ```
 
-## Serve
+## Run locally
+
+This will build the project and copy the `.wasm` file to `/docs`.
 
 ```
-cargo install basic-http-server
-basic-http-server .
+./build.sh; basic-http-server docs
 ```
