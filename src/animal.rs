@@ -1,6 +1,14 @@
 //use crate::manager::GameManager;
 use macroquad::prelude::*;
 
+/// Pet
+#[derive(Clone, Debug)]
+pub struct Pet {
+    pub name: String,
+    pub texture: Texture2D,
+    pub shadow: Texture2D,
+}
+
 /// Animal
 #[derive(Clone, Debug)]
 pub struct Animal {
@@ -13,6 +21,7 @@ pub struct Animal {
     pub facing: Facing,
     pub texture: Texture2D,
     pub shadow: Texture2D,
+    pub pet: Option<Pet>,
 }
 
 impl Animal {

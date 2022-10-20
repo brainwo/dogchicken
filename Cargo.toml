@@ -8,6 +8,9 @@ macroquad = "0.3"
 log = "0.4"
 console_log = {version = "0.2", optional = true, features = ["color"] }
 itertools = "0.10.3"
+# web-sys = 0.3.57
+# js-sys = 0.3.58
+# serde = 1.0.137
 
 [features]
 default = ["console_log"]

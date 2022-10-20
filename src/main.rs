@@ -2,7 +2,7 @@ pub mod animal;
 pub mod manager;
 pub mod name;
 
-use animal::{Animal, Position, Size};
+use animal::{Animal, Pet, Position, Size};
 use itertools::Itertools;
 use macroquad::prelude::collections::storage;
 use macroquad::prelude::*;
@@ -18,6 +18,7 @@ async fn main() {
     let body_colors = vec![RED, YELLOW, GREEN, BLUE];
 
     let name = NameGenerator::generate();
+    let pet_name = NameGenerator::generate();
 
     let start_position = Position {
         x: screen_width() / 2.0,
@@ -38,6 +39,11 @@ async fn main() {
         texture,
         shadow,
         age: 10,
+        pet: Some(Pet {
+            name: pet_name,
+            shadow,
+            texture,
+        }),
     };
 
     let mut animal_vec: Vec<Animal> = match storage::try_get_mut::<GameManager>() {
@@ -78,6 +84,7 @@ async fn main() {
                 },
                 color: *body_colors.choose().unwrap(),
                 state: animal::State::Rest(get_time()),
+                pet: None,
                 ..template
             });
 
